@@ -50,7 +50,7 @@
         </form>
 
         <div class="switch-auth">
-            Already have an account? <a href="login.jsp" class="switch-link">Login</a>
+            Already have an account? <a href="index.jsp" class="switch-link">Login</a>
         </div>
     </div>
 </div>
