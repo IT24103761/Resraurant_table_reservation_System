@@ -14,7 +14,7 @@ public class ReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Get form parameters
+        
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
@@ -24,7 +24,7 @@ public class ReservationServlet extends HttpServlet {
         String tableType = request.getParameter("tableType");
         String specialRequests = request.getParameter("specialRequests");
 
-        // Validate required fields
+       
         if (name == null || name.isEmpty() ||
                 email == null || email.isEmpty() ||
                 phone == null || phone.isEmpty() ||
@@ -37,19 +37,14 @@ public class ReservationServlet extends HttpServlet {
             return;
         }
 
-        // Validate email format
+       
         if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
             request.setAttribute("errorMessage", "Please enter a valid email address");
             request.getRequestDispatcher("reservation.jsp").forward(request, response);
             return;
         }
 
-        // In a real application, you would:
-        // 1. Process the reservation (save to database)
-        // 2. Send confirmation email
-        // 3. Handle any business logic
-
-        // For this example, we'll just forward to the JSP with a success message
+        
         request.setAttribute("successMessage", "Your reservation has been confirmed!");
         request.setAttribute("reservationDetails",
                 "Name: " + name + "<br>" +
