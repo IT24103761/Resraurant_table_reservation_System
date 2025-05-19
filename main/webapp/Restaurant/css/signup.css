@@ -1,0 +1,181 @@
+/* style.css */
+:root {
+    --primary-color: #e67e22; /* Warm orange for restaurant theme */
+    --primary-dark: #d35400;
+    --secondary-color: #2c3e50;
+    --light-color: #f8f9fa;
+    --white-color: #ffffff;
+    --dark-color: #333333;
+    --gray-color: #777777;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    color: var(--dark-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.5s ease;
+}
+
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem;
+    backdrop-filter: blur(5px);
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.name-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.half-width {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+}
+
+.password-hint {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    margin-top: 0.3rem;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+}
+
+.auth-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--gray-color);
+    font-size: 0.95rem;
+}
+
+.switch-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
+
+/* Error styling (you can add these classes dynamically with JS) */
+.input-error {
+    border-color: var(--error-color) !important;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .signup-container {
+        padding: 1.5rem;
+    }
+
+    .name-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .signup-container {
+        padding: 1.2rem;
+    }
+}
